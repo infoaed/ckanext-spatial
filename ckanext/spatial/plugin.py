@@ -18,6 +18,7 @@ from ckan.plugins import IRoutes
 from ckan.plugins import IConfigurable, IConfigurer
 from ckan.plugins import IGenshiStreamFilter
 from ckan.plugins import IPackageController
+import ckan.plugins as p
 
 from ckan.logic import ValidationError
 
@@ -124,6 +125,9 @@ class SpatialQuery(SingletonPlugin):
 
     implements(IRoutes, inherit=True)
     implements(IPackageController, inherit=True)
+    implements(IConfigurer, inherit=True)
+
+    # IRoutes
 
     def before_map(self, map):
 
@@ -181,6 +185,8 @@ class SpatialQuery(SingletonPlugin):
 
         return search_params
 
+    # IPackageController
+
     def after_search(self, search_results, search_params):
         if search_params.get('extras', {}).get('ext_spatial'):
             # Apply the spatial sort
@@ -199,6 +205,12 @@ class SpatialQuery(SingletonPlugin):
                     pass
             search_results['results'] = pkgs
         return search_results
+
+    # IConfigurer
+
+    def update_config(self, config):
+        # Serve up the JS for leaflet etc.
+        p.toolkit.add_public_directory(config, 'public')
 
 class SpatialQueryWidget(SingletonPlugin):
 
