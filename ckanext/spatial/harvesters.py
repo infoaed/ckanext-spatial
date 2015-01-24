@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 '''
 Different harvesters for spatial metadata
 
@@ -923,7 +925,7 @@ class GeminiCswHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'csw',
             'title': 'GEMINI - CSW Server',
-            'description': 'Location/INSPIRE data residing on an OGC Catalog Service for the Web (CSW) server'
+            'description': 'Asukoha/INSPIRE andmed, mis resideeruvad kusagil "OGC Catalog Service for the Web (CSW)" serveril'
             }
 
     def gather_stage(self, harvest_job):
@@ -1045,7 +1047,7 @@ class GeminiDocHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'gemini-single',
             'title': 'GEMINI - single file',
-            'description': 'Location/INSPIRE data as a single GEMINI 2.1 XML file'
+            'description': 'Asukoha/INSPIRE andmed üksiku GEMINI 2.1 XML failina'
             }
 
     def gather_stage(self,harvest_job):
@@ -1113,7 +1115,7 @@ class GeminiWafHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'gemini-waf',
             'title': 'GEMINI - Web Accessible Folder (WAF)',
-            'description': 'Location/INSPIRE data in a Web Accessible Folder (WAF) of GEMINI 2.1 files'
+            'description': 'Asukoha/INSPIRE andmed kusagil GEMINI 2.1 Web Accessible Folder (WAF) kataloogis'
             }
 
     def gather_stage(self,harvest_job):
