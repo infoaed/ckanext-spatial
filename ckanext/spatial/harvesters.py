@@ -1047,7 +1047,7 @@ class GeminiDocHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'gemini-single',
             'title': 'GEMINI - single file',
-            'description': 'Asukoha/INSPIRE andmed üksiku GEMINI 2.1 XML failina'
+            'description': u'Asukoha/INSPIRE andmed üksiku GEMINI 2.1 XML failina'
             }
 
     def gather_stage(self,harvest_job):
