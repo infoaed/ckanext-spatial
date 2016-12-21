@@ -925,7 +925,7 @@ class GeminiCswHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'csw',
             'title': 'GEMINI - CSW Server',
-            'description': 'Asukoha/INSPIRE andmed, mis resideeruvad kusagil "OGC Catalog Service for the Web (CSW)" serveril'
+            'description': _("Location/INSPIRE data residing on an OGC Catalog Service for the Web (CSW) server")
             }
 
     def gather_stage(self, harvest_job):
@@ -1047,7 +1047,7 @@ class GeminiDocHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'gemini-single',
             'title': 'GEMINI - single file',
-            'description': u'Asukoha/INSPIRE andmed üksiku GEMINI 2.1 XML failina'
+            'description': _("Location/INSPIRE data as a single GEMINI 2.1 XML file")
             }
 
     def gather_stage(self,harvest_job):
@@ -1115,7 +1115,7 @@ class GeminiWafHarvester(GeminiHarvester, SingletonPlugin):
         return {
             'name': 'gemini-waf',
             'title': 'GEMINI - Web Accessible Folder (WAF)',
-            'description': 'Asukoha/INSPIRE andmed kusagil GEMINI 2.1 Web Accessible Folder (WAF) kataloogis'
+            'description': _("Location/INSPIRE data in a Web Accessible Folder (WAF) of GEMINI 2.1 files")
             }
 
     def gather_stage(self,harvest_job):
