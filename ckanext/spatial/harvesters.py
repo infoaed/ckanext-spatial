@@ -38,6 +38,7 @@ from ckan.model import Session, Package
 from ckan.lib.munge import munge_title_to_name
 from ckan.plugins.core import SingletonPlugin, implements
 from ckan.lib.helpers import json
+from ckan.lib.base import _
 
 from ckan import logic
 from ckan.logic import get_action, ValidationError
